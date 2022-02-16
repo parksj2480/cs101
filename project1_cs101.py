@@ -40,23 +40,24 @@ def Addition():
 ### Remove student information. ###
 def Removal():
     global student_list
-    number=0
+    number=-1
     
     condition=input("Input a condition -> ")
+    if condition == 'all':
+        student_list.clear()
+        return
     condition=condition.split(' ')
     condition_name=condition[0]
     condition_bool=condition[1]
     condition_part=condition[2]
     temp=attribute_name.index(condition_name)
-    if condition == all:
-        student_list.clear()
+    
             
     for student in student_list:
         number += 1
-        print(number, 'student')
         if temp == 0:
             if condition_part == student[temp]:
-                print("Removed %s" % (student_list.pop(number-1)))
+                print("Removed %s" % str(student_list.pop(number)))
     return
 
 ### Show some static analysis on the info ###
