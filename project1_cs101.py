@@ -30,18 +30,33 @@ def Initiation():
 
 
 ### Add student info into the student_list by tuple type.###
-def Addition(info):
+def Addition():
     print("write under formation \n ex: ",tuple(attribute_name))
     global student_list
-    student_list.append(info)
+    temp=input()
+    student_list.append(temp)
     return
 
 ### Remove student information. ###
 def Removal():
     global student_list
-    condition=input()
+    number=0
+    
+    condition=input("Input a condition -> ")
+    condition=condition.split(' ')
+    condition_name=condition[0]
+    condition_bool=condition[1]
+    condition_part=condition[2]
+    temp=attribute_name.index(condition_name)
+    if condition == all:
+        student_list.clear()
+            
     for student in student_list:
-        student.remove(info)
+        number += 1
+        print(number, 'student')
+        if temp == 0:
+            if condition_part == student[temp]:
+                print("Removed %s" % (student_list.pop(number-1)))
     return
 
 ### Show some static analysis on the info ###
