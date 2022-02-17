@@ -66,6 +66,22 @@ def Statistic():
 
 ### Show information under certain conditions ###
 def Show():
+    cond = input("Input a condition -> ")
+    if cond == 'all':
+        for line in student_list:
+            print(line)
+        return
+    cond=cond.split(' ')
+    cond_name=cond[0]
+    cond_bool=cond[1]
+    cond_part=cond[2]
+    number=-1
+    temp=attribute_name.index(cond_name)
+
+    for student in student_list:
+        number += 1
+        if cond_part == student[temp]:
+            print(student)   
     return
 
 
